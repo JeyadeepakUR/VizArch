@@ -10,7 +10,9 @@ services:
         scope: run_time
         sync: false
       - key: OPENROUTER_SITE
-        value: https://vizarch.onrender.com
+        value: https://vizarch.vercel.app
       - key: OPENROUTER_TITLE
         value: VizArch
+      - key: ALLOWED_ORIGINS
+        value: https://vizarch.vercel.app,http://localhost:3000,http://localhost:3001
     healthCheckPath: /health

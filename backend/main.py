@@ -6,6 +6,7 @@ Holographic infrastructure simulator.
 from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import os
 from models import SimulationRequest, SimulationResult, ProposalRequest
 from ai_service import (
     generate_explanation,
@@ -17,15 +18,20 @@ from pricing import estimate_cost
 from proposal_pdf import build_proposal_pdf
 
 app = FastAPI(
-    title="Virtual Infrastructure Lab",
-    description="Holographic infrastructure composition and simulation",
+    title="VizArch Backend",
+    description="Infrastructure visualization and composition engine",
     version="1.0.0"
 )
 
-# CORS for frontend
+# CORS configuration - allow both local development and production
+allowed_origins = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:3000,http://localhost:3001,http://127.0.0.1:3000"
+).split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
