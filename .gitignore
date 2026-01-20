@@ -1,0 +1,64 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Next.js
+.next/
+out/
+node_modules/
+.vercel
+package-lock.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated files
+*.pdf
+proposal.pdf
+
+# Test files
+test_*.py
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Internal documentation
+ARCHITECTURE.md

@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vizarch-backend
+    runtime: python
+    pythonVersion: 3.11
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENROUTER_API_KEY
+        scope: run_time
+        sync: false
+      - key: OPENROUTER_SITE
+        value: https://vizarch.onrender.com
+      - key: OPENROUTER_TITLE
+        value: VizArch
+    healthCheckPath: /health
