@@ -23,7 +23,7 @@ if not OPENROUTER_API_KEY:
 
 # Model configuration for OpenRouter
 OPENROUTER_API_BASE = "https://openrouter.ai/api/v1"
-MODEL_ID = "xiaomi/mimo-v2-flash:free"  # Proven reliable free model
+MODEL_ID = "upstage/solar-pro-3:free"  # Proven reliable free model
 # ============================================================================
 # Structured Response Models (Pydantic for automatic validation)
 # ============================================================================
